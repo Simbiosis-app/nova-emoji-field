@@ -3,7 +3,7 @@
     <template slot="field">
       <div class="flex items-end">
         <button
-          class="flex items-center justify-center w-8 h-8 rounded-lg bg-40"
+          class="flex items-center justify-center w-12 h-8 rounded-lg bg-40"
           type="button"
           @click="togglePicker"
           style="padding-right: 1px"

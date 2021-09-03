@@ -1,0 +1,30 @@
+{
+    "name": "simbiosis/nova-emoji-field",
+    "description": "A Laravel Nova emoji field.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "emoji"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Simbiosis\\NovaEmojiField\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Simbiosis\\NovaEmojiField\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,6 +1,11 @@
 <template>
-  <default-field :field="field" :errors="errors" :show-help-text="showHelpText">
-    <template slot="field">
+  <DefaultField
+      :field="field"
+      :errors="errors"
+      :show-help-text="showHelpText"
+      :full-width-content="fullWidthContent"
+  >
+    <template #field>
       <div class="flex items-end">
         <button
           class="flex items-center justify-center w-12 h-8 rounded-lg bg-40"
@@ -22,7 +27,7 @@
         <button class="pl-3 text-xs hover:text-danger focus:outline-none" type="button" @click="value = ''">Remove</button>
       </div>
     </template>
-  </default-field>
+  </DefaultField>
 </template>
 
 <script>

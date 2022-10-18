@@ -1,5 +1,9 @@
-Nova.booting((Vue, router, store) => {
-  Vue.component('index-nova-emoji-field', require('./components/IndexField'))
-  Vue.component('detail-nova-emoji-field', require('./components/DetailField'))
-  Vue.component('form-nova-emoji-field', require('./components/FormField'))
+import IndexField from './components/IndexField'
+import DetailField from './components/DetailField'
+import FormField from './components/FormField'
+
+Nova.booting((app, store) => {
+  app.component('index-{{ component }}', IndexField)
+  app.component('detail-{{ component }}', DetailField)
+  app.component('form-{{ component }}', FormField)
 })

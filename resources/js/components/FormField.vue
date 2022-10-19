@@ -8,7 +8,7 @@
     <template #field>
       <div class="flex items-end">
         <button
-          class="flex items-center justify-center w-12 h-8 rounded-lg bg-40"
+          class="flex items-center justify-center w-12 h-8 rounded-lg bg-40 border-2 border-dashed mr-2"
           type="button"
           ref="button"
           style="padding-right: 1px"

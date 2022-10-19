@@ -8,7 +8,7 @@
     <template #field>
       <div class="flex items-end">
         <button
-          class="flex items-center justify-center w-12 h-8 rounded-lg bg-40 border-2 border-dashed mr-2"
+          class="flex items-center justify-center w-12 h-8 rounded-lg dark:hover:bg-gray-600 dark:border-gray-500 hover:bg-gray-50 border-2 border-dashed mr-2"
           type="button"
           ref="button"
           @click="togglePicker"
@@ -25,7 +25,7 @@
           </span>
         </button>
 
-        <button class="pl-3 text-xs hover:text-danger focus:outline-none" type="button" @click="value = ''">Remove</button>
+        <button class="pl-3 text-xs hover:text-danger focus:outline-none dark:hover:text-gray-300" type="button" @click="value = ''">Remove</button>
       </div>
     </template>
   </DefaultField>
@@ -47,6 +47,7 @@ export default {
     this.popupPicker = createPopup({
       autofocus: 'auto',
       theme: autoTheme,
+      initialCategory: 'recents',
     }, {
       referenceElement: this.$refs.button,
       triggerElement: this.$refs.button,

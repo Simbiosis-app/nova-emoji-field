@@ -10,7 +10,7 @@
         <button
           class="flex items-center justify-center w-12 h-8 rounded-lg bg-40"
           type="button"
-          @click="togglePicker"
+          ref="button"
           style="padding-right: 1px"
         >
           <span v-if="value === ''" class="flex">
@@ -31,10 +31,8 @@
 </template>
 
 <script>
-import { EmojiButton } from '@joeattardi/emoji-button';
+import { createPopup } from '@picmo/popup-picker'
 import { FormField, HandlesValidationErrors } from 'laravel-nova'
-
-const picker = new EmojiButton();
 
 export default {
   mixins: [FormField, HandlesValidationErrors],
@@ -44,7 +42,13 @@ export default {
   picker: {},
 
   mounted() {
-    picker.on('emoji', this.emojiSelected);
+    this.picker = createPopup({
+      autofocus: 'auto',
+      theme: 'autoTheme',
+    }, {
+      referenceElement: this.$refs.button,
+      triggerElement: this.$refs.button,
+    });
   },
 
   methods: {
@@ -64,10 +68,6 @@ export default {
 
     emojiSelected(event) {
       this.value = event.emoji;
-    },
-
-    togglePicker(event) {
-      picker.togglePicker(event.srcElement);
     }
   },
 }

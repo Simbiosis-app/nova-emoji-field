@@ -5,7 +5,7 @@
 
 ### Installation
 ```
-composer install simbiosis/nova-emoji-field
+composer require simbiosis/nova-emoji-field
 ```
 
 v1 is compatible with nova 3, v2 is for nova 4

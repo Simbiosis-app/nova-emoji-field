@@ -11,6 +11,7 @@
           class="flex items-center justify-center w-12 h-8 rounded-lg bg-40 border-2 border-dashed mr-2"
           type="button"
           ref="button"
+          @click="togglePicker"
           style="padding-right: 1px"
         >
           <span v-if="value === ''" class="flex">
@@ -39,16 +40,18 @@ export default {
 
   props: ['resourceName', 'resourceId', 'field'],
 
-  picker: {},
+  popupPicker: {},
 
   mounted() {
-    this.picker = createPopup({
+    this.popupPicker = createPopup({
       autofocus: 'auto',
       theme: 'autoTheme',
     }, {
       referenceElement: this.$refs.button,
       triggerElement: this.$refs.button,
     });
+
+    this.popupPicker.picker.addEventListener('emoji:select', this.emojiSelected)
   },
 
   methods: {
@@ -68,7 +71,11 @@ export default {
 
     emojiSelected(event) {
       this.value = event.emoji;
-    }
+    },
+
+    togglePicker() {
+      this.popupPicker.toggle()
+    },
   },
 }
 </script>
